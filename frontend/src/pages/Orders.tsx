@@ -36,7 +36,7 @@ const Orders: React.FC<OrdersProps> = () => {
                       </p>
                       <p>
                         <strong>Delivered</strong> -{' '}
-                        <span>{order.isDeliverd ? 'Order on its way' : 'Order Delivered'}</span>
+                        <span>{!order.isDeliverd ? 'Order on its way' : 'Order Delivered'}</span>
                       </p>
                       <div>
                         <p className="font-semibold">{order.shippingAddress.address}</p>
