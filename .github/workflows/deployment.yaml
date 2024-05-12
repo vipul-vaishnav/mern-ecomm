@@ -24,9 +24,6 @@ jobs:
         run: |
           npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
