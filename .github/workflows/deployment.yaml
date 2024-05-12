@@ -25,8 +25,14 @@ jobs:
           npm run build
 
       - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.MY_RENDER_API_KEY }}
-          wait-for-success: true
+        run: |
+          curl --request POST \
+              --url https://api.render.com/v1/services/${{ secrets.MY_RENDER_SERVICE_ID }}/deploys \
+              --header 'accept: application/json' \
+              --header 'authorization: Bearer ${{ secrets.MY_RENDER_API_KEY }}' \
+              --header 'content-type: application/json' \
+              --data '
+          {
+            "clearCache": "do_not_clear"
+          }
+          '
