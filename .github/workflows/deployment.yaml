@@ -35,4 +35,4 @@ jobs:
           {
             "clearCache": "do_not_clear"
           }
-          '
+          ' --fail-with-body

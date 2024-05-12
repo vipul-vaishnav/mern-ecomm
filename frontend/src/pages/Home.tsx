@@ -44,7 +44,7 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <section>
-      <h1 className="my-12 text-2xl font-bold text-center text-gray-700">Featured Products</h1>
+      <h1 className="my-12 text-2xl font-bold text-center text-gray-700">Featured Products New</h1>
 
       <div>
         {/* <div>
