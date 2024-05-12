@@ -4,7 +4,7 @@ import { USER_ROUTES } from '../../endpoints'
 import { Response } from '../../../types/Response'
 import { User } from '../../../types/User'
 
-export const getUser = (): [QueryKey, () => Promise<Response<User>>] => {
+export const getUser = (): Readonly<[QueryKey, () => Promise<Response<User>>]> => {
   const key = ['ProShopUser']
   const func = async () => {
     const res = await httpClient.get<Response<User>>(USER_ROUTES)
