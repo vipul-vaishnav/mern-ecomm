@@ -7,7 +7,7 @@ type TestApiResponse = {
   message: string
 }
 
-export const getTestApiKeyandFunc = (): [QueryKey, () => Promise<TestApiResponse>] => {
+export const getTestApiKeyandFunc = (): Readonly<[QueryKey, () => Promise<TestApiResponse>]> => {
   const queryKey = ['test']
   const queryFunc = async () => {
     const res = await httpClient.get<TestApiResponse>(API_TEST)

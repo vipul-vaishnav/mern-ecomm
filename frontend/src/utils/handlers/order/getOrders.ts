@@ -4,7 +4,7 @@ import { Order } from './createOrder'
 import { Response } from '../../../types/Response'
 import { GET_MY_ORDERS } from '../../endpoints'
 
-export const getOrders = (): [QueryKey, () => Promise<Response<Order[]>>] => {
+export const getOrders = (): Readonly<[QueryKey, () => Promise<Response<Order[]>>]> => {
   const queryKey = ['orders']
   const queryFunc = async () => {
     const res = await httpClient.get<Response<Order[]>>(GET_MY_ORDERS)
